@@ -17,6 +17,7 @@ La struttura della repository si presenta nel seguente modo:
 |    |-test-classes
 |--pom.xml
 |--wreckage.jar
+|--wreckage.iml
 |–– README.md
 ```
 
