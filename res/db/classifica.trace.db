@@ -1,0 +1,32 @@
+2020-07-01 19:45:14 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: Method is not allowed for a query. Use execute or executeQuery instead of executeUpdate; SQL statement:
+SHOW TABLES FROM classifica; [90001-200]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:505)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:429)
+	at org.h2.message.DbException.get(DbException.java:205)
+	at org.h2.message.DbException.get(DbException.java:181)
+	at org.h2.message.DbException.get(DbException.java:170)
+	at org.h2.command.Prepared.update(Prepared.java:219)
+	at org.h2.command.CommandContainer.update(CommandContainer.java:198)
+	at org.h2.command.Command.executeUpdate(Command.java:251)
+	at org.h2.jdbc.JdbcStatement.executeUpdateInternal(JdbcStatement.java:168)
+	at org.h2.jdbc.JdbcStatement.executeUpdate(JdbcStatement.java:126)
+	at com.goodluckhavefun.wreckage.general.DbCreation.main(DbCreation.java:31)
+2020-07-03 17:45:49 jdbc[4]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Column "NOME" not found; SQL statement:
+SELECT Nome, time '00:00:00' + Tempo FROM Classifica ORDER BY Tempo [42122-200]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:453)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:429)
+	at org.h2.message.DbException.get(DbException.java:205)
+	at org.h2.message.DbException.get(DbException.java:181)
+	at org.h2.expression.ExpressionColumn.getColumnException(ExpressionColumn.java:163)
+	at org.h2.expression.ExpressionColumn.optimize(ExpressionColumn.java:145)
+	at org.h2.command.dml.Select.prepare(Select.java:1206)
+	at org.h2.command.Parser.prepareCommand(Parser.java:744)
+	at org.h2.engine.Session.prepareLocal(Session.java:657)
+	at org.h2.engine.Session.prepareCommand(Session.java:595)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1235)
+	at org.h2.jdbc.JdbcStatement.executeQuery(JdbcStatement.java:78)
+	at com.goodluckhavefun.wreckage.general.Classifica.stampaClassifica(Classifica.java:56)
+	at com.goodluckhavefun.wreckage.general.Partita.play(Partita.java:98)
+	at com.goodluckhavefun.wreckage.general.AppMain.main(AppMain.java:89)
