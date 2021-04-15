@@ -20,6 +20,7 @@ La struttura della repository si presenta nel seguente modo:
 |--.project
 |--pom.xml
 |--wreckage.jar
+|–– README.md
 ```
 
 Nel seguito si dettagliano i ruoli dei diversi componenti:
