@@ -15,9 +15,6 @@ La struttura della repository si presenta nel seguente modo:
 |--target
 |    |--classes
 |    |-test-classes
-|--.classpath
-|––.gitignore
-|--.project
 |--pom.xml
 |--wreckage.jar
 |–– README.md
