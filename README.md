@@ -15,10 +15,10 @@ La struttura della repository si presenta nel seguente modo:
 |--target
 |    |--classes
 |    |-test-classes
+|–– README.md
+|--Wreckage.iml
 |--pom.xml
 |--wreckage.jar
-|--Wreckage.iml
-|–– README.md
 ```
 
 Nel seguito si dettagliano i ruoli dei diversi componenti:
