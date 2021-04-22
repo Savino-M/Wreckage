@@ -37,7 +37,8 @@ public class Giocatore implements Serializable
             // stampa la descrizione del luogo
 
             esito = true;
-        } else
+        }
+        else
         {
 
             for (Oggetto item : this.getLuogoAttuale().getOggetti())
@@ -151,16 +152,19 @@ public class Giocatore implements Serializable
                 if (!luogoAttuale.isVisitato())
                 {
                     System.out.println(ANSI_CYAN + luogoAttuale.getDescrizione() + ANSI_RESET);
-                } else
+                }
+                else
                 {
                     System.out.println(ANSI_CYAN + luogoAttuale.getDescrizioneSec() + ANSI_RESET);
                 }
                 esito = true;
 
-            } else if (l == null)
+            }
+            else if (l == null)
             {
                 System.out.println(ANSI_RED + "\n>Comando non valido, hai inserito un luogo inaccessibile!" + ANSI_RESET);
-            } else if (l.isBloccato())
+            }
+            else if (l.isBloccato())
             { // se il luogo è bloccato
                 System.out.println(ANSI_RED + luogoAttuale.getMessaggio() + ANSI_RESET);
             }
@@ -190,7 +194,8 @@ public class Giocatore implements Serializable
                     System.out.println(ANSI_GREEN + "\n>Hai equipaggiato l'arma: " + item.getNome() + "." + ANSI_RESET);
                     break;
 
-                } else if (item instanceof Cura)
+                }
+                else if (item instanceof Cura)
                 { // se è una cura la si usa
                     Cura cura = (Cura) item;
                     System.out.println(ANSI_GREEN + "\n>Ti sei rigenerato di " + (cura.getCurabilita() - this.getPuntiVita()) + " punti vita." + ANSI_RESET);
@@ -236,7 +241,8 @@ public class Giocatore implements Serializable
             dannoEffettivo = (int) (Math.random() * this.getArmaInUso().getDannoMax() + 1) + (this.getArmaInUso().getDannoMax() / 2); // viene generato il danno
             nemico.setVita(nemico.getVita() - dannoEffettivo);
             System.out.println(ANSI_GREEN + "\n>Hai colpito il nemico togliendogli " + dannoEffettivo + " punti vita!" + ANSI_RESET);
-        } else
+        }
+        else
         {
             System.out.println(ANSI_RED + "\n>Non hai nessuna arma equipaggiata. Se non ne possiedi, corri indietro per trovarne una!" + ANSI_RESET);
         }
@@ -248,7 +254,8 @@ public class Giocatore implements Serializable
             System.out.println(ANSI_RED + ">" + nemico.getNome() + " ti ha colpito togliendoti " + dannoEffettivo + " punti vita." + ANSI_RESET);
             System.out.println(ANSI_YELLOW + ">Il nemico ha ancora " + nemico.getVita() + " punti vita.\n" + ANSI_RESET);
 
-        } else
+        }
+        else
         {
             esito = true;
             for (Oggetto o : nemico.getDropList())

@@ -75,7 +75,8 @@ public class AppMain
                         }
                     }
 
-                } else
+                }
+                else
                 {
                     intro = true; // deve essere stampata l'introduzione
                     p = new Partita();

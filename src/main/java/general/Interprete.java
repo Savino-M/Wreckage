@@ -13,7 +13,8 @@ public class Interprete
 
             azione = Azione.ActionPassa;
 
-        } else
+        }
+        else
         {
             String[] input = comando.split(" ");
             azione = interpretaAzione(input); // identifica l'azione richiesta

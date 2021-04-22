@@ -77,11 +77,13 @@ public class Partita
                             if (mappa.getKm167().getNemico() == null)
                             { // si verifica di aver ucciso la donna al km167
                                 esito = false;
-                            } else
+                            }
+                            else
                             {
                                 esito = giocatore.move(luogo.trim()); // sposta il giocatore
                             }
-                        } else
+                        }
+                        else
                         {
                             esito = giocatore.move(luogo.trim()); // sposta il giocatore
                         }
@@ -102,7 +104,8 @@ public class Partita
                             Salvataggio.reset();
                             System.exit(0);
 
-                        } else if (esito == true && luogo.trim().equals("interno bunker") && giocatore.getLuogoAttuale().getNomeLuogo().equals("interno bunker"))
+                        }
+                        else if (esito == true && luogo.trim().equals("interno bunker") && giocatore.getLuogoAttuale().getNomeLuogo().equals("interno bunker"))
                         {
                             // altrimenti si vince
 
@@ -131,14 +134,16 @@ public class Partita
                         if (giocatore.getLuogoAttuale().getNemico() == null)
                         {
                             System.out.println(ANSI_RED + "\n>Non c'e' nessun nemico che puoi attaccare." + ANSI_RESET);
-                        } else
+                        }
+                        else
                         {
                             esito = giocatore.attacca(giocatore.getLuogoAttuale().getNemico());
                             if (esito)
                             {
                                 System.out.println(ANSI_GREEN + "\n>Complimenti hai sconfitto il nemico!" + ANSI_RESET);
                                 Salvataggio.salva(mappa, giocatore);
-                            } else if (giocatore.getPuntiVita() <= 0)
+                            }
+                            else if (giocatore.getPuntiVita() <= 0)
                             {
                                 System.out.println(ANSI_RED + "\n**************************************************************\n"
                                         + "             IL NEMICO TI HA DISTRUTTO. GAME OVER!            "
@@ -185,7 +190,8 @@ public class Partita
                             {
                                 System.out.println("- " + i.getNome());
                             }
-                        } else
+                        }
+                        else
                         {
                             System.out.println(" Il tuo inventario e' vuoto.");
                         }
@@ -200,7 +206,8 @@ public class Partita
                         if (!esito)
                         {
                             System.out.println(ANSI_RED + "\n>Qualcosa e' andato storto e non e' stato possibile rilasciare." + ANSI_RESET);
-                        } else
+                        }
+                        else
                         {
                             System.out.println(ANSI_GREEN + "\n>Hai lasciato: " + oggetto + "." + ANSI_RESET);
                             Salvataggio.salva(mappa, giocatore);
@@ -224,10 +231,12 @@ public class Partita
                                     + "\n**************************************************************\n" + ANSI_RESET);
                             Salvataggio.reset();
                             System.exit(0);
-                        } else if (!scelta.equals("n"))
+                        }
+                        else if (!scelta.equals("n"))
                         {
                             System.out.println(ANSI_RED + "\n>Comando non valido. Inserisci S o N!\n" + ANSI_RESET);
-                        } else
+                        }
+                        else
                         {
                             System.out.println("");
                         }
@@ -241,7 +250,8 @@ public class Partita
                         if (!esito)
                         {
                             System.out.println(ANSI_RED + "\n>Comando non valido. Non puoi raccogliere qualcosa che non esiste!" + ANSI_RESET);
-                        } else
+                        }
+                        else
                         {
                             System.out.println(ANSI_GREEN + "\n>Hai raccolto:" + oggetto + "." + ANSI_RESET);
                             Salvataggio.salva(mappa, giocatore);
@@ -270,10 +280,12 @@ public class Partita
                                     + "\n**************************************************************\n" + ANSI_RESET);
                             musica.kill();
                             return;
-                        } else if (!scelta.equals("n"))
+                        }
+                        else if (!scelta.equals("n"))
                         {
                             System.out.println(ANSI_RED + "\n>Comando non valido. Inserisci S o N!\n" + ANSI_RESET);
-                        } else
+                        }
+                        else
                         {
                             System.out.println("");
                         }
@@ -296,21 +308,25 @@ public class Partita
                                         + "   Dati memorizzati correttamente. Uscita dal gioco...    "
                                         + "\n**************************************************************\n" + ANSI_RESET);
                                 System.exit(0);
-                            } else if (scelta.equals("n"))
+                            }
+                            else if (scelta.equals("n"))
                             {
                                 Salvataggio.reset();
                                 System.out.println(ANSI_GREEN + "\n**************************************************************\n"
                                         + "                   Uscita dal gioco...                   "
                                         + "\n**************************************************************\n" + ANSI_RESET);
                                 System.exit(0);
-                            } else
+                            }
+                            else
                             {
                                 System.out.println(ANSI_RED + "\n>Comando non valido. Inserisci S o N!\n" + ANSI_RESET);
                             }
-                        } else if (scelta.equals("n"))
+                        }
+                        else if (scelta.equals("n"))
                         {
                             System.out.println("");
-                        } else
+                        }
+                        else
                         {
                             System.out.println(ANSI_RED + "\n>Comando non valido. Inserisci S o N!\n" + ANSI_RESET);
                         }
@@ -329,14 +345,17 @@ public class Partita
                                 musica.kill();
                                 System.out.println(ANSI_GREEN + "\n>Audio stoppato correttamente!" + ANSI_RESET);
 
-                            } else if (scelta.equals("n"))
+                            }
+                            else if (scelta.equals("n"))
                             {
                                 System.out.println("");
-                            } else
+                            }
+                            else
                             {
                                 System.out.println(ANSI_RED + "\n>Comando non valido. Inserisci S o N!\n" + ANSI_RESET);
                             }
-                        } else
+                        }
+                        else
                         {
                             System.out.print(ANSI_YELLOW + "\n>Vuoi riattivare l'audio? (S/N)\n>" + ANSI_RESET);
                             scelta = scelte.next();
@@ -347,10 +366,12 @@ public class Partita
                                 setupMusica();
                                 System.out.println(ANSI_GREEN + "\n>Audio riattivato correttamente!" + ANSI_RESET);
 
-                            } else if (scelta.equals("n"))
+                            }
+                            else if (scelta.equals("n"))
                             {
                                 System.out.println("");
-                            } else
+                            }
+                            else
                             {
                                 System.out.println(ANSI_RED + "\n>Comando non valido. Inserisci S o N!\n" + ANSI_RESET);
                             }
@@ -364,7 +385,8 @@ public class Partita
                     default:
                         break;
                 }
-            } else
+            }
+            else
             {
                 System.out.println(ANSI_RED + "\n>Comando non valido." + ANSI_RESET);
             }
