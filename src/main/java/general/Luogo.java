@@ -6,8 +6,7 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Luogo implements Serializable
-{
+public class Luogo implements Serializable {
 
     private static final long serialVersionUID = 1L;
     private String descrizione; // descrizione del luogo
@@ -22,8 +21,7 @@ public class Luogo implements Serializable
     private String descrizioneSec;
     private boolean visitato;
 
-    public Luogo()
-    {
+    public Luogo() {
         bloccato = false;
         luoghiAdiacenti = new ArrayList<Luogo>();
         oggetti = new ArrayList<Oggetto>();
@@ -34,110 +32,88 @@ public class Luogo implements Serializable
         visitato = false;
     }
 
-    public String getDescrizione()
-    {
+    public String getDescrizione() {
         return descrizione;
     }
 
-    public void setDescrizione(String descrizione)
-    {
+    public void setDescrizione(String descrizione) {
         this.descrizione = descrizione;
     }
 
-    public List<Luogo> getLuoghiAdiacenti()
-    {
+    public List<Luogo> getLuoghiAdiacenti() {
         return luoghiAdiacenti;
     }
 
-    public String getNomeLuogo()
-    {
+    public String getNomeLuogo() {
         return nomeLuogo;
     }
 
-    public void setNomeLuogo(String nomeLuogo)
-    {
+    public void setNomeLuogo(String nomeLuogo) {
         this.nomeLuogo = nomeLuogo;
     }
 
-    public List<Oggetto> getOggetti()
-    {
+    public List<Oggetto> getOggetti() {
         return oggetti;
     }
 
-    public void setOggetti(ArrayList<Oggetto> oggetti)
-    {
+    public void setOggetti(ArrayList<Oggetto> oggetti) {
         this.oggetti = oggetti;
     }
 
-    public String getMessaggio()
-    {
+    public String getMessaggio() {
         return messaggio;
     }
 
-    public void setMessaggio(String messaggio)
-    {
+    public void setMessaggio(String messaggio) {
         this.messaggio = messaggio;
     }
 
-    public boolean isBloccato()
-    {
+    public boolean isBloccato() {
         return bloccato;
     }
 
-    public void setBloccato(boolean bloccato)
-    {
+    public void setBloccato(boolean bloccato) {
         this.bloccato = bloccato;
     }
 
-    public Nemico getNemico()
-    {
+    public Nemico getNemico() {
         return nemico;
     }
 
-    public void setNemico(Nemico nemico)
-    {
+    public void setNemico(Nemico nemico) {
         this.nemico = nemico;
     }
 
-    public Oggetto getOggettoSbloccante()
-    {
+    public Oggetto getOggettoSbloccante() {
         return oggettoSbloccante;
     }
 
-    public void setOggettoSbloccante(Oggetto oggettoSbloccante)
-    {
+    public void setOggettoSbloccante(Oggetto oggettoSbloccante) {
         this.oggettoSbloccante = oggettoSbloccante;
     }
 
-    public String getTestoEsamina()
-    {
+    public String getTestoEsamina() {
         return testoEsamina;
     }
 
-    public void setTestoEsamina(String testoEsamina)
-    {
+    public void setTestoEsamina(String testoEsamina) {
         this.testoEsamina = testoEsamina;
     }
 
-    public boolean isVisitato()
-    {
+    public boolean isVisitato() {
         return visitato;
     }
 
-    public void setVisitato(boolean visitato)
-    {
+    public void setVisitato(boolean visitato) {
         this.visitato = visitato;
     }
 
-    public Luogo adiacenteA(String luogoDest)
-    {
+    public Luogo adiacenteA(String luogoDest) {
 
         Luogo adiacente = null;
 
-        for (Luogo l : luoghiAdiacenti)
-        {
-            if (l.getNomeLuogo().equals(luogoDest))
-            {
+        for (Luogo l : luoghiAdiacenti) {
+            if (l.getNomeLuogo().equals(luogoDest)) {
                 adiacente = l;
             }
         }
@@ -145,13 +121,11 @@ public class Luogo implements Serializable
         return adiacente;
     }
 
-    public String getDescrizioneSec()
-    {
+    public String getDescrizioneSec() {
         return descrizioneSec;
     }
 
-    public void setDescrizioneSec(String descrizioneSec)
-    {
+    public void setDescrizioneSec(String descrizioneSec) {
         this.descrizioneSec = descrizioneSec;
     }
 }

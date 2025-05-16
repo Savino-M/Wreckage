@@ -6,8 +6,7 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Nemico implements Serializable
-{
+public class Nemico implements Serializable {
 
     private static final long serialVersionUID = 1L;
     private String nome;
@@ -15,36 +14,30 @@ public class Nemico implements Serializable
     private int dannoMax;
     private List<Oggetto> dropList;
 
-    public Nemico(String nome, int vita, int dannoMax)
-    {
+    public Nemico(String nome, int vita, int dannoMax) {
         this.nome = nome;
         this.vita = vita;
         this.dannoMax = dannoMax;
         dropList = new ArrayList<Oggetto>();
     }
 
-    public int getVita()
-    {
+    public int getVita() {
         return vita;
     }
 
-    public void setVita(int vita)
-    {
+    public void setVita(int vita) {
         this.vita = vita;
     }
 
-    public String getNome()
-    {
+    public String getNome() {
         return nome;
     }
 
-    public int getDannoMax()
-    {
+    public int getDannoMax() {
         return dannoMax;
     }
 
-    public List<Oggetto> getDropList()
-    {
+    public List<Oggetto> getDropList() {
         return dropList;
     }
 

@@ -2,21 +2,19 @@ package general;
 
 import java.io.*;
 
-public class Salvataggio
-{
+public class Salvataggio {
 
-    public static void salva(Mappa mappa, Giocatore giocatore)
-    { //salva la partita su file
+    public static void salva(Mappa mappa, Giocatore giocatore) { // salva la partita su file
 
         FileOutputStream outFile = null;
         ObjectOutputStream outStream = null;
         FileOutputStream outFile1 = null;
         ObjectOutputStream outStream1 = null;
 
-        try
-        {
-            outFile = new FileOutputStream("res/saves/Mappa.dat");
-            outFile1 = new FileOutputStream("res/saves/Player.dat");
+        try {
+
+            outFile = new FileOutputStream("Java/Wreckage/res/saves/mappa.dat");
+            outFile1 = new FileOutputStream("Java/Wreckage/res/saves/player.dat");
 
             outStream = new ObjectOutputStream(outFile);
             outStream1 = new ObjectOutputStream(outFile1);
@@ -24,134 +22,107 @@ public class Salvataggio
             outStream.writeObject(mappa);
             outStream1.writeObject(giocatore);
 
-        }
-        catch (Exception e)
-        {
-            System.out.println(e);
-        }
-
-        try
-        {
             outFile.close();
             outStream.close();
             outFile1.close();
             outStream1.close();
-        }
-        catch (IOException e)
-        {
+
+        } catch (Exception e) {
+
             System.out.println(e);
+
         }
 
     }
 
-    public static Mappa caricaMappa()
-    { //carica stato della mapppa da file
+    public static Mappa caricaMappa() { // carica stato della mapppa da file
 
         FileInputStream inFile = null;
         ObjectInputStream inStream = null;
         Mappa mappa = null;
 
-        try
-        {  //apertura file
-            inFile = new FileInputStream("res/saves/Mappa.dat");
+        try { // apertura file
+
+            inFile = new FileInputStream("Java/Wreckage/res/saves/mappa.dat");
             inStream = new ObjectInputStream(inFile);
             mappa = (Mappa) inStream.readObject();
-        }
-        catch (Exception e)
-        {
-            System.out.println(e);
-        }
 
-        try
-        {  //chiusura file
             inStream.close();
             inFile.close();
-        }
-        catch (Exception e)
-        {
+
+        } catch (Exception e) {
+
             System.out.println(e);
+
         }
+
         return mappa;
+
     }
 
-    public static Giocatore caricaGiocatore()
-    { //carica stato del giocatore da file
+    public static Giocatore caricaGiocatore() { // carica stato del giocatore da file
 
         FileInputStream inFile = null;
         ObjectInputStream inStream = null;
         Giocatore giocatore = null;
 
-        try
-        {
-            inFile = new FileInputStream("res/saves/Player.dat");
+        try {
+
+            inFile = new FileInputStream("Java/Wreckage/res/saves/player.dat");
             inStream = new ObjectInputStream(inFile);
             giocatore = (Giocatore) inStream.readObject();
 
-        }
-        catch (Exception e)
-        {
-            System.out.println(e);
-        }
-
-        try
-        {
             inStream.close();
             inFile.close();
-        }
-        catch (Exception e)
-        {
+
+        } catch (Exception e) {
+
             System.out.println(e);
+
         }
+
         return giocatore;
+
     }
 
-    public static boolean esistePartita()
-    { //verifica se su file è già presente una partita
+    public static boolean esistePartita() { // verifica se su file è già presente una partita
 
         boolean esito = false;
 
         FileInputStream inFile = null;
         ObjectInputStream inStream = null;
 
-        try
-        {
-            inFile = new FileInputStream("res/saves/Player.dat");
+        try {
+
+            inFile = new FileInputStream("Java/Wreckage/res/saves/mappa.dat");
             inStream = new ObjectInputStream(inFile);
 
-            if (inStream.readObject() != null)
-            {
+            if (inStream.readObject() != null) {
+
                 esito = true;
+
             }
 
-        }
-        catch (Exception e)
-        {
-        }
-
-        try
-        {
             inStream.close();
             inFile.close();
-        }
-        catch (Exception e)
-        {
+
+        } catch (Exception e) {
+
             System.out.println(e);
+
         }
+
         return esito;
+
     }
 
-    public static void reset()
-    { //reset totale dei file di mappa e giocatore
+    public static void reset() { // reset totale dei file di mappa e giocatore
 
-        FileOutputStream outFile = null;
         ObjectOutputStream outStream = null;
-        FileOutputStream outFile1 = null;
         ObjectOutputStream outStream1 = null;
 
-        try
-        {
-            outFile = new FileOutputStream("res/saves/Mappa.dat");
-            outFile1 = new FileOutputStream("res/saves/Player.dat");
+        try (FileOutputStream outFile = new FileOutputStream("Java/Wreckage/res/saves/mappa.dat");
+                FileOutputStream outFile1 = new FileOutputStream("Java/Wreckage/res/saves/player.dat")) {
 
             outStream = new ObjectOutputStream(outFile);
             outStream1 = new ObjectOutputStream(outFile1);
@@ -159,10 +130,10 @@ public class Salvataggio
             outStream.writeObject(null);
             outStream1.writeObject(null);
 
-        }
-        catch (Exception e)
-        {
+        } catch (Exception e) {
+
             System.out.println(e);
+
         }
 
     }

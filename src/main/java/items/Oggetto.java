@@ -2,8 +2,7 @@ package items;
 
 import java.io.Serializable;
 
-public class Oggetto implements Serializable
-{
+public class Oggetto implements Serializable {
 
     private static final long serialVersionUID = 1L;
     private String nome;
@@ -12,8 +11,7 @@ public class Oggetto implements Serializable
     private boolean prendibile; // indica se l'oggetto si può raccogliere
     private boolean usabile; // indica se l'oggetto si può usare
 
-    public Oggetto(String nome, String descrizione, boolean visibile, boolean prendibile, boolean usabile)
-    {
+    public Oggetto(String nome, String descrizione, boolean visibile, boolean prendibile, boolean usabile) {
         this.nome = nome;
         this.descrizione = descrizione;
         this.visibile = visibile;
@@ -21,8 +19,7 @@ public class Oggetto implements Serializable
         this.usabile = usabile;
     }
 
-    public Oggetto(String nome, String descrizione, boolean visibile)
-    {
+    public Oggetto(String nome, String descrizione, boolean visibile) {
         this.nome = nome;
         this.descrizione = descrizione;
         this.visibile = visibile;
@@ -30,53 +27,43 @@ public class Oggetto implements Serializable
         this.usabile = true;
     }
 
-    public boolean isVisibile()
-    {
+    public boolean isVisibile() {
         return visibile;
     }
 
-    public void setVisibile(boolean visibile)
-    {
+    public void setVisibile(boolean visibile) {
         this.visibile = visibile;
     }
 
-    public boolean isPrendibile()
-    {
+    public boolean isPrendibile() {
         return prendibile;
     }
 
-    public void setPrendibile(boolean prendibile)
-    {
+    public void setPrendibile(boolean prendibile) {
         this.prendibile = prendibile;
     }
 
-    public String getNome()
-    {
+    public String getNome() {
         return nome;
     }
 
-    public void setNome(String nome)
-    {
+    public void setNome(String nome) {
         this.nome = nome;
     }
 
-    public String getDescrizione()
-    {
+    public String getDescrizione() {
         return descrizione;
     }
 
-    public void setDescrizione(String descrizione)
-    {
+    public void setDescrizione(String descrizione) {
         this.descrizione = descrizione;
     }
 
-    public boolean isUsabile()
-    {
+    public boolean isUsabile() {
         return usabile;
     }
 
-    public void setUsabile(boolean usabile)
-    {
+    public void setUsabile(boolean usabile) {
         this.usabile = usabile;
     }
 

@@ -2,8 +2,7 @@ package general;
 
 import java.util.Scanner;
 
-public class AppMain
-{
+public class WreckageApplication {
 
     private static final String ANSI_RED = "\033[0;31m";
     private static final String ANSI_BLUE = "\033[0;34m";
@@ -11,8 +10,7 @@ public class AppMain
     private static final String ANSI_RESET = "\u001B[0m";
     private static final String ANSI_GREEN = "\033[0;32m";
 
-    public static void main(String args[])
-    {
+    public static void main(String args[]) {
 
         String scelta = null;
         boolean valido = false;
@@ -28,11 +26,9 @@ public class AppMain
         introduzione[2] = "\n>Riuscirai a raggiungere sano e salvo il bunker piu' vicino a te?"
                 + "\n>Tieniti pronto, questo e' solo l'inizio!";
 
-        try (Scanner leggi = new Scanner(System.in))
-        {
+        try (Scanner leggi = new Scanner(System.in)) {
 
-            while (true)
-            {
+            while (true) {
 
                 scelta = null;
                 valido = false;
@@ -41,19 +37,16 @@ public class AppMain
 
                 System.out.println("\n" + ANSI_RED + ">Benvenuto in WRECKAGE, il gioco ha inizio!" + ANSI_RESET);
 
-                if (Salvataggio.esistePartita())
-                { // se esiste un salvataggio precedente
+                if (Salvataggio.esistePartita()) { // se esiste un salvataggio precedente
 
-                    while (valido == false)
-                    {
+                    while (valido == false) {
                         System.out.print("\n" + ANSI_BLUE
                                 + ">E' gia' presente una partita. Vuoi continuare da dove eri rimasto? (S/N)"
                                 + ANSI_RESET + "\n>");
                         scelta = leggi.nextLine();
                         scelta = scelta.toLowerCase();
 
-                        switch (scelta)
-                        {
+                        switch (scelta) {
 
                             case "s":
                                 valido = true;
@@ -75,18 +68,14 @@ public class AppMain
                         }
                     }
 
-                }
-                else
-                {
+                } else {
                     intro = true; // deve essere stampata l'introduzione
                     p = new Partita();
                 }
 
-                if (intro == true)
-                {
+                if (intro == true) {
 
-                    for (int i = 0; i < 3; i++)
-                    { // stampa dell'introduzione
+                    for (int i = 0; i < 3; i++) { // stampa dell'introduzione
 
                         System.out.println(ANSI_CYAN + introduzione[i] + ANSI_RESET);
                         System.out.print("\n" + ANSI_GREEN + ">Premi invio per continuare..." + ANSI_RESET + "\n>");
